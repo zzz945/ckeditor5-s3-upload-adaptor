@@ -1,0 +1,57 @@
+{
+  "author": "D.Y.Zhang (https://github.com/zzz945/)",
+  "bugs": {
+    "url": "https://github.com/zzz945/ckeditor5-s3-upload-adaptor/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Aws S3 upload adaptor for CKEditor 5.",
+  "devDependencies": {},
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.21.0",
+    "@aws-sdk/client-s3": "^3.21.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.21.0",
+    "@aws-sdk/lib-storage": "^3.21.0",
+    "crypto-js": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@ckeditor/ckeditor5-core": "^22.0.0",
+    "@ckeditor/ckeditor5-upload": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "files": [
+    "src"
+  ],
+  "homepage": "https://github.com/zzz945/ckeditor5-s3-upload-adaptor",
+  "keywords": [
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5",
+    "ckeditor5-feature",
+    "ckeditor5-plugin"
+  ],
+  "license": "GPL-2.0-or-later",
+  "name": "@zzz945/ckeditor5-s3-upload-adaptor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzz945/ckeditor5-s3-upload-adaptor.git"
+  },
+  "version": "0.0.4",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=12.0.0",
+        "npm": ">=5.7.1"
+      },
+      "pkgid": "@zzz945/ckeditor5-s3-upload-adaptor@0.0.1"
+    }
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
