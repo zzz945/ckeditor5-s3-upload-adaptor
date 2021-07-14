@@ -39,7 +39,7 @@
     "type": "git",
     "url": "git+https://github.com/zzz945/ckeditor5-s3-upload-adaptor.git"
   },
-  "version": "0.0.4",
+  "version": "0.0.6",
   "warnings": [
     {
       "code": "ENOTSUP",

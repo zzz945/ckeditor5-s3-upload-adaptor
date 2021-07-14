@@ -77,16 +77,20 @@
     * @returns {Promise}
     */
    upload() {
+     const { prefix } = this.options
+
      return this.loader.file
        .then( file => new Promise( ( resolve, reject ) => {
          const reader = new FileReader();
          reader.onload = event => {
            const binary = event.target.result;
            const md5 = CryptoJS.MD5(binary).toString();
-           const prefix = 'test'
-           const fileName = encodeURIComponent(`${md5}_${file.name}`)
+           let filePath = `${md5}_${encodeURIComponent(file.name)}`
+           if (prefix) {
+            filePath = `${prefix}/${filePath}`
+           }
            // const _addAsset = file.size > 1024 * 1024 * 5 ? addAssetMultipart : addAsset
-           addAssetMultipart(file, prefix, fileName, ({ loaded, total }) => {
+           addAssetMultipart(file, filePath, ({ loaded, total }) => {
              this.loader.uploadTotal = total;
              this.loader.uploaded = loaded;
            }).then(({ Location: url }) => {

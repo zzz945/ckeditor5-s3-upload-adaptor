@@ -20,10 +20,10 @@ export function initS3 ({ region, identityPoolId, bucketName: _bucketName }) {
   });
 }
 
-export function addAsset (file, prefix, fileName) {
+export function addAsset (file, filePath) {
   const uploadParams = {
     Bucket: bucketName,
-    Key: `${prefix}/${fileName}`,
+    Key: filePath,
     Body: file,
     ContentType: file.type
   };
@@ -31,13 +31,10 @@ export function addAsset (file, prefix, fileName) {
   return s3.send(new PutObjectCommand(uploadParams))
 };
 
-export function addAssetMultipart (file, prefix, fileName, progressChange) {
-  const albumPhotosKey = prefix + "/";
-
-  const photoKey = albumPhotosKey + fileName;
+export function addAssetMultipart (file, filePath, progressChange) {  
   const uploadParams = {
     Bucket: bucketName,
-    Key: photoKey,
+    Key: filePath,
     Body: file,
     ContentType: file.type
   };
